@@ -2,6 +2,7 @@
 
 from ctypes import c_char_p, c_int
 from enum import IntEnum
+from typing import Union
 
 from . import _CtypesEnum
 
@@ -46,7 +47,7 @@ class ErrorCode(_CtypesEnum, IntEnum):
     NONEMPTY = ...
 
 
-def cgroup_strerror(code: c_int) -> c_char_p: ...
+def cgroup_strerror(code: Union[c_int, int]) -> Union[c_char_p, bytes]: ...
 
 
-def cgroup_get_last_errno() -> c_int: ...
+def cgroup_get_last_errno() -> Union[c_int, int]: ...
