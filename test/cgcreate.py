@@ -3,11 +3,12 @@ import os
 import unittest
 from ctypes import byref, c_char_p
 
-from libcgroup.error import cgroup_strerror
-from libcgroup.groups import cgroup_add_controller, cgroup_create_cgroup, cgroup_free, cgroup_new_cgroup, \
-    cgroup_set_uid_gid
-from libcgroup.init import cgroup_init
-from libcgroup.tasks import DaemonType, cgroup_change_cgroup_path, cgroup_register_unchanged_process
+from libcgroup_bind.error import cgroup_strerror
+from libcgroup_bind.groups import (
+    cgroup_add_controller, cgroup_create_cgroup, cgroup_free, cgroup_new_cgroup, cgroup_set_uid_gid
+)
+from libcgroup_bind.init import cgroup_init
+from libcgroup_bind.tasks import DaemonType, cgroup_change_cgroup_path, cgroup_register_unchanged_process
 
 
 class TestContext(unittest.TestCase):

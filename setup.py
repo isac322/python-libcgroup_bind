@@ -64,6 +64,6 @@ setup(
             'stub': ['typing']
         },
         package_data={
-            'libcgroup': ['*.pyi'],
+            'libcgroup_bind': ['*.pyi'],
         }
 )
