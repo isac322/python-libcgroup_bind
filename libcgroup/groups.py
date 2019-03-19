@@ -228,7 +228,8 @@ cg_chmod_recursive.argtypes = (CGroupPointer, c_uint, c_int, c_uint, c_int)
 cg_chmod_recursive.restype = c_int
 # int cg_chmod_recursive(struct cgroup *cgroup, mode_t dir_mode, int dirm_change, mode_t file_mode, int filem_change);
 
-cgroup_get_cgroup_name = _libcgroup.cgroup_get_cgroup_name
-cgroup_get_cgroup_name.argtypes = (CGroupPointer,)
-cgroup_get_cgroup_name.restype = c_char_p
-# char *cgroup_get_cgroup_name(struct cgroup *cgroup);
+# TODO: undefined
+# cgroup_get_cgroup_name = _libcgroup.cgroup_get_cgroup_name
+# cgroup_get_cgroup_name.argtypes = (CGroupPointer,)
+# cgroup_get_cgroup_name.restype = c_char_p
+# # char *cgroup_get_cgroup_name(struct cgroup *cgroup);
