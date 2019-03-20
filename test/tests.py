@@ -38,7 +38,7 @@ class TestContext(unittest.TestCase):
 
         arr_t = c_char_p * 1
         cgroup_register_unchanged_process(pid, DaemonType.UNCHANGE_CHILDREN)
-        ret = cgroup_change_cgroup_path(b'test', pid, byref(c_char_p(b'cpuset')))
+        ret = cgroup_change_cgroup_path(b'test', pid, arr_t(b'cpuset'))
         self.assertEqual(0, ret, f'{cgroup_strerror(ret).decode()}')
 
         cgroup_free(byref(cgroup))

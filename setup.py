@@ -17,7 +17,7 @@ setup(
         url='https://github.com/isac322/python-libcgroup_bind',
         packages=find_packages(exclude=('test',)),
         classifiers=[
-            'Development Status :: 2 - Pre-Alpha',
+            'Development Status :: 3 - Alpha',
             'Environment :: No Input/Output (Daemon)',
             'Intended Audience :: Developers',
             'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
