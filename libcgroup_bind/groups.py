@@ -13,6 +13,7 @@ except ImportError:
 
 
 class DeleteFlag(IntFlag):
+    NONE = 0b000
     IGNORE_MIGRATION = 0b001
     RECURSIVE = 0b010
     EMPTY_ONLY = 0b100
