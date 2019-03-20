@@ -71,14 +71,14 @@ def cgroup_change_cgroup_flags(uid: Union[c_uint, int],
                                gid: Union[c_uint, int],
                                procname: Union[c_char_p, bytes],
                                pid: Union[c_int, int],
-                               flags: Union[c_int, int]) -> Union[c_int, int]: ...
+                               flags: CGFlags) -> Union[c_int, int]: ...
 
 
 # int cgroup_change_cgroup_uid_gid_flags(uid_t uid, gid_t gid, pid_t pid, int flags);
 def cgroup_change_cgroup_uid_gid_flags(uid: Union[c_uint, int],
                                        gid: Union[c_uint, int],
                                        pid: Union[c_int, int],
-                                       flags: Union[c_int, int]) -> Union[c_int, int]: ...
+                                       flags: CGFlags) -> Union[c_int, int]: ...
 
 
 # int cgroup_change_cgroup_uid_gid(uid_t uid, gid_t gid, pid_t pid);

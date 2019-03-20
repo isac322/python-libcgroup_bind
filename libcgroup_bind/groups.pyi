@@ -73,7 +73,7 @@ def cgroup_delete_cgroup(cgroup: CGroupPointer, ignore_ownership: Union[c_int, i
 
 
 # int cgroup_delete_cgroup_ext(struct cgroup *cgroup, int flags);
-def cgroup_delete_cgroup_ext(cgroup: CGroupPointer, flags: Union[c_int, int]) -> Union[c_int, int]: ...
+def cgroup_delete_cgroup_ext(cgroup: CGroupPointer, flags: DeleteFlag) -> Union[c_int, int]: ...
 
 
 # int cgroup_get_cgroup(struct cgroup *cgroup);
