@@ -1,9 +1,15 @@
 # coding: UTF-8
 
-from ctypes import POINTER, Structure, c_char_p, c_int, c_short, c_uint, c_void_p
+import subprocess
+from ctypes import POINTER, Structure, c_char, c_char_p, c_int, c_short, c_uint, c_void_p
 from enum import IntEnum
 
 from . import _libcgroup
+
+try:
+    MAX_PATH = int(subprocess.check_output(['getconf', 'PATH_MAX', '/']))
+except (ValueError, subprocess.CalledProcessError, OSError):
+    MAX_PATH = 4096
 
 
 class WalkType(IntEnum):
@@ -66,8 +72,8 @@ cgroup_read_value_end.restype = c_int
 
 class Stat(Structure):
     _fields_ = (
-        ('name', c_char_p),
-        ('value', c_char_p),
+        ('name', c_char * MAX_PATH),
+        ('value', c_char * MAX_PATH),
     )
 
 
@@ -100,8 +106,8 @@ cgroup_get_task_end.restype = c_int
 
 class MountPoint(Structure):
     _fields_ = (
-        ('name', c_char_p),
-        ('path', c_char_p),
+        ('name', c_char * MAX_PATH),
+        ('path', c_char * MAX_PATH),
     )
 
 
@@ -122,7 +128,7 @@ cgroup_get_controller_end.restype = c_int
 
 class ControllerData(Structure):
     _fields_ = (
-        ('name', c_char_p),
+        ('name', c_char * MAX_PATH),
         ('hierarchy', c_int),
         ('num_cgroups', c_int),
         ('enabled', c_int),
