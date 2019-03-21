@@ -206,7 +206,7 @@ def cgroup_get_value_name_count(controller: CGroupControllerPointer) -> Union[c_
 
 
 # char *cgroup_get_value_name(struct cgroup_controller *controller, int index);
-def cgroup_get_value_name(controller: CGroupControllerPointer, index: Union[c_int, int]) -> c_char_p: ...
+def cgroup_get_value_name(controller: CGroupControllerPointer, index: Union[c_int, int]) -> Union[c_char_p, bytes]: ...
 
 
 c_int_pp: Type[pointer[c_int_p]]

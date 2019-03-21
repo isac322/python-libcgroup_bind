@@ -214,7 +214,7 @@ cgroup_get_value_name_count.restype = c_int
 
 cgroup_get_value_name = _libcgroup.cgroup_get_value_name
 cgroup_get_value_name.argtypes = (CGroupControllerPointer, c_int)
-cgroup_get_value_name.restype = c_int
+cgroup_get_value_name.restype = c_char_p
 # char *cgroup_get_value_name(struct cgroup_controller *controller, int index);
 
 c_int_pp = POINTER(c_int_p)
