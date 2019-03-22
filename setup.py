@@ -8,7 +8,7 @@ with open('README.md') as fp:
 
 setup(
         name='libcgroup_bind',
-        version='1.0.3',
+        version='1.0.4',
         author='Byeonghoon Yoo',
         author_email='bh322yoo@gmail.com',
         description='Python binding for libcgroup',

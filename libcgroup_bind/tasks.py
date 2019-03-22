@@ -35,7 +35,7 @@ cgroup_attach_task.argtypes = (CGroupPointer,)
 cgroup_attach_task.restype = c_int
 # int cgroup_attach_task(struct cgroup *cgroup);
 
-cgroup_attach_task_pid = _libcgroup.cgroup_attach_task
+cgroup_attach_task_pid = _libcgroup.cgroup_attach_task_pid
 cgroup_attach_task_pid.argtypes = (CGroupPointer, c_int)
 cgroup_attach_task_pid.restype = c_int
 # int cgroup_attach_task_pid(struct cgroup *cgroup, pid_t tid);
