@@ -92,11 +92,11 @@ cgroup_read_stats_end.argtypes = (c_void_pp,)
 cgroup_read_stats_end.restype = c_int
 
 cgroup_get_task_begin = _libcgroup.cgroup_get_task_begin
-cgroup_get_task_begin.argtypes = (c_char_p, c_char_p, c_void_pp, c_int)
+cgroup_get_task_begin.argtypes = (c_char_p, c_char_p, c_void_pp, c_int_p)
 cgroup_get_task_begin.restype = c_int
 
 cgroup_get_task_next = _libcgroup.cgroup_get_task_next
-cgroup_get_task_next.argtypes = (c_void_pp, c_int)
+cgroup_get_task_next.argtypes = (c_void_pp, c_int_p)
 cgroup_get_task_next.restype = c_int
 
 cgroup_get_task_end = _libcgroup.cgroup_get_task_end
