@@ -17,11 +17,11 @@ class LogLevel(IntEnum):
         return int(obj)
 
 
-cgroup_logger_callback = CFUNCTYPE(c_void_p, c_int, c_char_p, c_void_p)
+LoggerCallback = CFUNCTYPE(None, c_void_p, c_int, c_char_p, c_void_p)
 # typedef void (*cgroup_logger_callback)(void *userdata, int level, const char *fmt, va_list ap);
 
 cgroup_set_logger = _libcgroup.cgroup_set_logger
-cgroup_set_logger.argtypes = (cgroup_logger_callback, c_int, c_void_p)
+cgroup_set_logger.argtypes = (LoggerCallback, c_int, c_void_p)
 cgroup_set_logger.restype = None
 # extern void cgroup_set_logger(cgroup_logger_callback logger, int loglevel, void *userdata);
 
